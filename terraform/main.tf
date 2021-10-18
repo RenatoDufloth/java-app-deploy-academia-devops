@@ -24,7 +24,7 @@ resource "aws_instance" "maquina_nodejs" {
     volume_size = 20
   }
   
-  vpc_security_group_ids = [aws_security_group.acessos_nodejs-dufloth.id]
+  vpc_security_group_ids = [aws_security_group.acessos_nodejs.id]
 }
 
 resource "aws_security_group" "acessos_nodejs" {
