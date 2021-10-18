@@ -23,7 +23,8 @@ resource "aws_instance" "maquina_nodejs" {
     #kms_key_id  = "arn:aws:kms:us-east-1:534566538491:key/90847cc8-47e8-4a75-8a69-2dae39f0cc0d"
     volume_size = 20
   }
-  vpc_security_group_ids = [aws_security_group.acessos_nodejs.id]
+  vpc_security_group_ids      = ["${aws_security_group.allow_ssh.id}", "${aws_security_group.allow_80.id}"]
+  #vpc_security_group_ids = [aws_security_group.acessos_nodejs.id]
 }
 
 
