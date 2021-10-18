@@ -83,7 +83,7 @@ resource "aws_security_group" "acessos_nodejs" {
   ]
 
   tags = {
-    Name = "allow_ssh"
+    Name = "allow_ssh_dufloth"
   }
 }
 
