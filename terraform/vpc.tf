@@ -17,7 +17,8 @@ resource "aws_security_group" "allow_ssh" {
 	      ipv6_cidr_blocks = ["::/0"]
 	      prefix_list_ids  = null
 	      security_groups : null
-	      self : null,
+	      self : null
+	     },
 	     {
 	      description      = "Acesso HTTPS"
 	      from_port        = 443
@@ -29,7 +30,7 @@ resource "aws_security_group" "allow_ssh" {
 	      security_groups: null,
 	      self: null
 	    }
-	    }
+	    
 	
 
 	  ]
