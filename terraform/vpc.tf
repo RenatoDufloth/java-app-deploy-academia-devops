@@ -17,7 +17,18 @@ resource "aws_security_group" "allow_ssh" {
 	      ipv6_cidr_blocks = ["::/0"]
 	      prefix_list_ids  = null
 	      security_groups : null
-	      self : null
+	      self : null,
+	     {
+	      description      = "Acesso HTTPS"
+	      from_port        = 443
+	      to_port          = 443
+	      protocol         = "tcp"
+	      cidr_blocks      = ["0.0.0.0/0"]
+	      ipv6_cidr_blocks = ["::/0"]
+	      prefix_list_ids = null,
+	      security_groups: null,
+	      self: null
+	    }
 	    }
 	
 
@@ -42,7 +53,7 @@ resource "aws_security_group" "allow_ssh" {
 	
 
 	  tags = {
-	    Name = "allow_ssh"
+	    Name = "allow_ssh_docker-dufloth"
 	  }
 	}
 	resource "aws_security_group" "allow_80" {
@@ -88,7 +99,7 @@ resource "aws_security_group" "allow_ssh" {
 	
 
 	  tags = {
-	    Name = "allow_80"
+	    Name = "allow_docker-dufloth"
 	  }
 	}
 
