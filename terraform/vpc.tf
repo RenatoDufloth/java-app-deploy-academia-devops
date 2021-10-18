@@ -1,6 +1,6 @@
 
 resource "aws_security_group" "allow_ssh" {
-	  name        = "allow_ssh"
+	  name        = "allow_ssh_docker-dufloth"
 	  description = "Allow ssh inbound traffic"
 	  vpc_id      = "vpc-0404e2502328d5e45"
 	
@@ -58,7 +58,7 @@ resource "aws_security_group" "allow_ssh" {
 	  }
 	}
 	resource "aws_security_group" "allow_80" {
-	  name        = "allow_80"
+	  name        = "allow_80_docker-dufloth"
 	  description = "Allow 80 inbound traffic"
 	  vpc_id      = "vpc-0404e2502328d5e45"
 	
