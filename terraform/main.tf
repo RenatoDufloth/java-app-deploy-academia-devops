@@ -23,7 +23,7 @@ resource "aws_instance" "maquina_nodejs" {
     #kms_key_id  = "arn:aws:kms:us-east-1:534566538491:key/90847cc8-47e8-4a75-8a69-2dae39f0cc0d"
     volume_size = 20
   }
-  
+
   vpc_security_group_ids = [aws_security_group.acessos_nodejs.id]
 }
 
@@ -40,9 +40,9 @@ resource "aws_security_group" "acessos_nodejs" {
       protocol         = "tcp"
       cidr_blocks      = ["${chomp(data.http.myip.body)}/32"]
       ipv6_cidr_blocks = ["::/0"]
-      prefix_list_ids = null,
-      security_groups: null,
-      self: null
+      prefix_list_ids  = null,
+      security_groups : null,
+      self : null
     },
     {
       description      = "Acesso HTTPS"
@@ -51,9 +51,9 @@ resource "aws_security_group" "acessos_nodejs" {
       protocol         = "tcp"
       cidr_blocks      = ["0.0.0.0/0"]
       ipv6_cidr_blocks = ["::/0"]
-      prefix_list_ids = null,
-      security_groups: null,
-      self: null
+      prefix_list_ids  = null,
+      security_groups : null,
+      self : null
     },
     {
       description      = "Acesso HTTP"
@@ -62,9 +62,9 @@ resource "aws_security_group" "acessos_nodejs" {
       protocol         = "tcp"
       cidr_blocks      = ["0.0.0.0/0"]
       ipv6_cidr_blocks = ["::/0"]
-      prefix_list_ids = null,
-      security_groups: null,
-      self: null
+      prefix_list_ids  = null,
+      security_groups : null,
+      self : null
     }
   ]
 
@@ -75,10 +75,10 @@ resource "aws_security_group" "acessos_nodejs" {
       protocol         = "-1"
       cidr_blocks      = ["0.0.0.0/0"]
       ipv6_cidr_blocks = ["::/0"],
-      prefix_list_ids = null,
-      security_groups: null,
-      self: null,
-      description: "Libera dados da rede interna"
+      prefix_list_ids  = null,
+      security_groups : null,
+      self : null,
+      description : "Libera dados da rede interna"
     }
   ]
 
